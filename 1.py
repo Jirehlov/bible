@@ -45,21 +45,37 @@ def get_verses(verses, start_book, start_chap, start_verse, end_book, end_chap, 
     actual_end_verse = end_verse
     actual_end_chap = end_chap
     for v in verses:
-        try: book, chap, verse = map(int, (v['book'], v['chapter'], v['verse']))
-        except ValueError: continue
         if v['type'] not in ['1', '3']: continue
-        if (start_book < book < end_book) or (start_book == book and start_chap <= chap <= end_chap and start_verse <= verse) or (end_book == book and start_chap <= chap <= end_chap and verse <= end_verse):
+        if '、' in v['verse']:
+            verse_range = v['verse'].split('、')
+            try:
+                start_verse_of_range = int(verse_range[0])
+                end_verse_of_range = int(verse_range[-1])
+            except ValueError:
+                continue
+        else:
+            try:
+                book, chap, verse = map(int, (v['book'], v['chapter'], v['verse']))
+                start_verse_of_range = end_verse_of_range = verse
+            except ValueError:
+                continue
+        book, chap = map(int, (v['book'], v['chapter']))
+        if (start_book < book < end_book) or (start_book == book and start_chap <= chap <= end_chap and start_verse <= end_verse_of_range) or (end_book == book and start_chap <= chap <= end_chap and start_verse_of_range <= end_verse):
             if chap != current_chap:
                 first_verse_of_chap = True
                 current_chap = chap
-            content = clean_content(v['content'], env_vars, comment_lookup, no_comments)
-            if include_section_numbers:
-                content = f"{chap}.{verse} {content}" if first_verse_of_chap else f"{verse} {content}"
-                first_verse_of_chap = False
-            results.append(content)
-            actual_end_verse = verse
-            actual_end_chap = chap
-            if verse == end_verse and chap == end_chap: break
+            if chap == start_chap and end_verse_of_range >= start_verse:
+                if chap == end_chap and start_verse_of_range > end_verse:
+                    break
+                content = clean_content(v['content'], env_vars, comment_lookup, no_comments)
+                if include_section_numbers:
+                    verse_display = v['verse']
+                    content = f"{chap}.{verse_display} {content}" if first_verse_of_chap else f"{verse_display} {content}"
+                    first_verse_of_chap = False
+                results.append(content)
+                actual_end_verse = end_verse_of_range
+                actual_end_chap = chap
+                if end_verse_of_range >= end_verse and chap == end_chap: break
     return "".join(results).rstrip("\r\n"), actual_end_chap, actual_end_verse
 def parse_reference(ref, book_map, book_map_cn):
     if ref is None: return 0, "", "", 0, 0
