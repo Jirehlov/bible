@@ -1,0 +1,67 @@
+﻿id,en_abbr,en_full,cuv_abbr,cuv_full
+1,gen,Genesis,创,创世记
+2,exo,Exodus,出,出埃及记
+3,lev,Leviticus,利,利未记
+4,num,Numbers,民,民数记
+5,deu,Deuteronomy,申,申命记
+6,jos,Joshua,书,约书亚记
+7,jdg,Judges,士,士师记
+8,rut,Ruth,得,路得记
+9,1sa,1 Samuel,撒上,撒母耳记上
+10,2sa,2 Samuel,撒下,撒母耳记下
+11,1ki,1 Kings,王上,列王纪上
+12,2ki,2 Kings,王下,列王纪下
+13,1ch,1 Chronicles,代上,历代志上
+14,2ch,2 Chronicles,代下,历代志下
+15,ezr,Ezra,拉,以斯拉记
+16,neh,Nehemiah,尼,尼希米记
+17,est,Esther,斯,以斯帖记
+18,job,Job,伯,约伯记
+19,psa,Psalms,诗,诗篇
+20,pro,Proverbs,箴,箴言
+21,ecc,Ecclesiastes,传,传道书
+22,sng,Song of Solomon,歌,雅歌
+23,isa,Isaiah,赛,以赛亚书
+24,jer,Jeremiah,耶,耶利米书
+25,lam,Lamentations,哀,耶利米哀歌
+26,ezk,Ezekiel,结,以西结书
+27,dan,Daniel,但,但以理书
+28,hos,Hosea,何,何西阿书
+29,jol,Joel,珥,约珥书
+30,amo,Amos,摩,阿摩司书
+31,oba,Obadiah,俄,俄巴底亚书
+32,jon,Jonah,拿,约拿书
+33,mic,Micah,弥,弥迦书
+34,nam,Nahum,鸿,那鸿书
+35,hab,Habakkuk,哈,哈巴谷书
+36,zap,Zaphaniah,番,西番雅书
+37,hag,Haggai,该,哈该书
+38,zac,Zachariah,撒,撒迦利亚书
+39,mal,Malachi,玛,玛拉基书
+40,mat,Matthew,太,马太福音
+41,mrk,Mark,可,马可福音
+42,luk,Luke,路,路加福音
+43,jhn,John,约,约翰福音
+44,act,Acts,徒,使徒行传
+45,rom,Romans,罗,罗马书
+46,1co,1 Corinthians,林前,哥林多前书
+47,2co,2 Corinthians,林后,哥林多后书
+48,gal,Galatians,加,加拉太书
+49,eph,Ephesians,弗,以弗所书
+50,php,Philippians,腓,腓立比书
+51,col,Colossians,西,歌罗西书
+52,1th,1 Thessalonians,帖前,帖撒罗尼迦前书
+53,2th,2 Thessalonians,帖后,帖撒罗尼迦后书
+54,1ti,1 Timothy,提前,提摩太前书
+55,2ti,2 Timothy,提后,提摩太后书
+56,tit,Titus,多,提多书
+57,phm,Philemon,腓,腓立比书
+58,heb,Hebrews,来,希伯来书
+59,jas,James,雅,雅各书
+60,1pe,1 Peter,彼前,彼得前书
+61,2pe,2 Peter,彼后,彼得后书
+62,1jn,1 John,约壹,约翰一书
+63,2jn,2 John,约贰,约翰二书
+64,3jn,3 John,约叁,约翰三书
+65,jud,Jude,犹,犹大书
+66,rev,Revelation,启,启示录
