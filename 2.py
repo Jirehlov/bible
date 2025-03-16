@@ -4,7 +4,7 @@ from collections import Counter
 import matplotlib
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus'] = False
-ALLOWED_TAGS = {"u", "ud", "c", "br", "god"}
+ALLOWED_TAGS = {"u", "ud", "c", "br", "god", "sl"}
 def validate_tags(filename):
     errors, tag_pattern = [], re.compile(r"</?([a-zA-Z]+)>")
     total_rows, updated_rows = 0, 0
