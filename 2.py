@@ -2,9 +2,10 @@ import csv, re
 import matplotlib.pyplot as plt
 from collections import Counter
 import matplotlib
+from datetime import datetime
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus'] = False
-ALLOWED_TAGS = {"u", "ud", "c", "br", "god", "sl"}
+ALLOWED_TAGS = {"u", "ud", "c", "br", "god", "sl", "mss"}
 def validate_tags(filename):
     errors, tag_pattern = [], re.compile(r"</?([a-zA-Z]+)>")
     total_rows, updated_rows = 0, 0
@@ -28,7 +29,10 @@ def plot_date_frequencies(date_counts):
     if not date_counts:
         print("没有可用的日期数据。")
         return
-    dates, frequencies = zip(*sorted(date_counts.items()))
+    dates = [datetime.strptime(date, "%Y/%m/%d") for date in date_counts.keys()]
+    sorted_dates = sorted(zip(dates, date_counts.values()))
+    sorted_dates = [(date.strftime("%Y/%m/%d"), count) for date, count in sorted_dates]
+    dates, frequencies = zip(*sorted_dates)
     plt.figure(figsize=(10, 5), dpi=150)
     plt.bar(dates, frequencies, color='skyblue')
     plt.xlabel("日期")
